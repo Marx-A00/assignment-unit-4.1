@@ -15,7 +15,7 @@ console.log('Test - should say "Hello World!"', hello());
 // 2. Function to return an personalized hello, using the `name` argument.
 //    for example 'Hello, Jo!', or 'Hello, Stacy!'
 function helloName(name) {
-  return "hello "+ name + "!";
+  return "Hello, "+ name + "!"; // ???
 }
 // Remember to call the function to test
 console.log("test should return hello + name!", helloName("Roger"));
@@ -23,22 +23,22 @@ console.log("test should return hello + name!", helloName("Roger"));
 
 // 3. Function to add two numbers together & return the result
 function addNumbers(firstNumber) {
-  let secondNumber = 10;
+  let secondNumber = 4;
   return firstNumber + secondNumber;
   // return firstNumber + secondNumber;
 }
-console.log("should return firstNumber + secondNumber(10) = 15",addNumbers(5));
+console.log("should return firstNumber + secondNumber(4) = 9",addNumbers(5));
 
 
 // 4. Function to multiply three numbers & return the result
 function multiplyThree() {
   let firstNumber = 1;
-  let secondNumber = 2;
-  let thirdNumber = 3;
+  let secondNumber = 6;
+  let thirdNumber = 4;
 
   return (firstNumber * secondNumber * thirdNumber);
 }
-console.log("should return 1*2+3 = 6",multiplyThree());
+console.log("should return 1*6*4 = 24",multiplyThree());
 
 // 5. Function that will return true if a number is positive, 
 //    or greater than zero, and false otherwise
@@ -92,16 +92,31 @@ console.log("should return false: ", find(0,[]));
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-
+  for(let i of string){
+    if( i == letter){
+      return true;
+    }
+  }
+  return false;
 }
+
+console.log("should return true: ",isFirstLetter("a","apple"));
+console.log("should return false: ",isFirstLetter("b","apple"));
+console.log("should return true: ",isFirstLetter("A","apple")); // have to check for capital letters
+
+
+
 
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll() {
+function sumAll() {   // perhaps ask if you can alter this 
   let sum = 0;
   // TODO: loop to add items
-
+  for(let i of array){
+    i += sum;
+  }
   // TODO: return the sum
+  return sum;
 }
 
 // 10. Function to return a new array of all positive (greater than zero)
