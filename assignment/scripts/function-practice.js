@@ -27,39 +27,64 @@ function addNumbers(firstNumber) {
   return firstNumber + secondNumber;
   // return firstNumber + secondNumber;
 }
-console.log("should return firstNumber + secondNumber(10)",addNumbers(5));
+console.log("should return firstNumber + secondNumber(10) = 15",addNumbers(5));
 
 
 // 4. Function to multiply three numbers & return the result
 function multiplyThree() {
+  let firstNumber = 1;
+  let secondNumber = 2;
+  let thirdNumber = 3;
 
+  return (firstNumber * secondNumber * thirdNumber);
 }
-
+console.log("should return 1*2+3 = 6",multiplyThree());
 
 // 5. Function that will return true if a number is positive, 
 //    or greater than zero, and false otherwise
 function isPositive(number) {
   if (number > 0) {
-    return;
+    return true;
   }
-  return;
+  return false;
 }
 // Call the function to test each outcome (true & false) 
 // Write a separate console.log statement for each outcome
+console.log("should return true: ",isPositive(1));
+console.log("should return false: ", isPositive(-5));
+console.log("should return false: ", isPositive(0));
 
 
 // 6. Function to return the _last_ item in an array. If the 
 //    array is empty, return `undefined`.
 function getLast(array) {
+  if (array.length == 0){
+    return undefined;
+  }
 
+  return array.pop();
 }
+console.log("should return 4",getLast([1,2,3,4]));
+console.log("should return undefined: ",getLast([]));
+
 
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
 function find(value, array) {
-
+  for(let x of array){
+    if (x == value){
+      return true;
+    }
+  }
+  return false;
 }
+
+console.log("should return true: ", find(4,[1,2,3,4]));
+console.log("should return false: ", find(0,[1,2,3,4]));
+console.log("should return false: ", find(0,[]));
+
+
 
 // ----------------------
 // Stretch Goals
